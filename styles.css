@@ -1,0 +1,106 @@
+body {
+    background: linear-gradient(135deg, #E0F2FF, #EEF2FF, #F3E8FF);
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #4F46E5;
+    margin-bottom: 2rem;
+}
+
+.family-details {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+button {
+    background: #4F46E5;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4338CA;
+}
+
+/* Navigation Styles */
+.top-nav {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.name-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.name-title .dot {
+    width: 24px;
+    height: 24px;
+    background: #87CEEB;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+#nameTitle {
+    color: white;
+}
+
+.name-title span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.name-info {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+}
+
+.name-info p {
+    color: rgba(255, 255, 255, 0.9);
+}

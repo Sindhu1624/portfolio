@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Sindhu Y</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        .top-nav {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .name-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .name-title .dot {
+            width: 24px;
+            height: 24px;
+            background: #87CEEB;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        #nameTitle {
+            color: white;
+        }
+
+        .name-title span:last-child {
+            color: rgba(255, 255, 255, 0.8);
+        }
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #87CEEB;
+        }
+
+        /* Projects Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .technologies {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .technologies h3 {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="name-title">
+            <div class="dot"></div>
+            <span id="nameTitle" style="cursor: pointer;">Sindhu Y</span>
+            <span style="color: #666; margin-left: 1rem;">Computer Science Student</span>
+            <div class="name-info" id="nameInfo">
+               
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Profile</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="projects-grid">
+            <div class="project-card">
+                <h2 class="project-title">Crop Rotation Advisor</h2>
+                <p class="project-description">
+                    Developed a web-based Crop Rotation Advisor to recommend optimal crop sequences for improving soil health and yield. 
+                    The system analyzes soil conditions, climate data, and previous crop history to suggest the best rotation patterns 
+                    for sustainable agriculture.
+                </p>
+                <div class="technologies">
+                    <h3>Technologies Used:</h3>
+                    <p class="tech-stack">Node.js, Express, MongoDB, REST API</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Smart Parking System</h2>
+                <p class="project-description">
+                    A web-based platform where users can log in, check real-time parking slot availability, and book their spot. 
+                    It enhances parking efficiency and user convenience using an interactive interface. Features include real-time 
+                    updates, booking management, and payment integration.
+                </p>
+                <div class="technologies">
+                    <h3>Technologies Used:</h3>
+                    <p class="tech-stack">HTML, CSS, JavaScript, MySQL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

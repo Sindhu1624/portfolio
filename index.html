@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sindhu Y | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+        }
+
+        .name-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .name-title .dot {
+            width: 24px;
+            height: 24px;
+            background: #87CEEB;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Main Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Profile Section Styles */
+        .profile-section {
+            text-align: center;
+            padding-left: 4rem;
+        }
+
+        .profile-image {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .profile-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            padding-center: 5rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Content Section Styles */
+        .content-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .content-section p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Button Group Styles */
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .circular-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .circular-button:hover {
+            transform: scale(1.05);
+        }
+
+        .resume {
+            background: #90EE90;
+            color: #333;
+        }
+
+        .projects {
+            background: #FFA500;
+            color: #333;
+        }
+        .button {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: transform 0.2s;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+        }
+
+        .Resume { background: #90EE90; color: #333; }
+        .Projects { background: #FFA500; color: #333; }
+        .Contact { background: #87CEEB; color: #333; }
+        */
+
+        /* Section Styles */
+        .section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Projects Grid Styles */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing HTML content from nav to the end of projects section -->
+    <!-- Update navigation bar to only show Contact -->
+    <style>
+        /* Add these styles with your existing CSS */
+        .name-info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 50px;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .name-info.show {
+            display: block;
+        }
+
+        .name-info p {
+            margin: 0.5rem 0;
+            color: #333;
+        }
+    </style>
+
+    <!-- Update the navigation section -->
+    <nav class="top-nav">
+        <div class="name-title">
+            <div class="dot"></div>
+            <span id="nameTitle" style="cursor: pointer;">Sindhu Y</span>
+            <span style="color: #666; margin-left: 1rem;">Computer Science Student</span>
+            <div class="name-info" id="nameInfo">
+                <p>Name: Sindhu Y</p>
+                <p>Father's Name: Y Bramhaji</p>
+                <p>Mother's Name:Y Lilli Pushpa </p>
+                <p>Location: Malkapur camp, sindhanur taluq, raichur district.</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        const nameTitle = document.getElementById('nameTitle');
+        const nameInfo = document.getElementById('nameInfo');
+
+        nameTitle.addEventListener('click', () => {
+            nameInfo.classList.toggle('show');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!nameTitle.contains(e.target) && !nameInfo.contains(e.target)) {
+                nameInfo.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+    <div class="container">
+        <div class="profile-section">
+            <img src="p.jpg" alt="Sindhu Y" class="profile-image">
+            <h2 class="profile-title">Web Developer</h2>
+        </div>
+        
+        <div class="content-section">
+            <h1>Sindhu Y</h1>
+            <p>I am a Computer Science and Engineering student at Gitam Institute of Technology and Management. I am passionate about developing innovative solutions and exploring new technologies. My interests include web development and embedded system.</p>
+            <p>I enjoy working on real-world projects like smart parking systems and crop rotation advisors. I am always eager to learn, grow, and contribute meaningfully to the tech world.</p>
+            
+            <!-- Replace section-links with circular buttons -->
+            <div class="button-group">
+                <a href="resume.html" class="circular-button resume">Resume</a>
+                <a href="projects.html" class="circular-button projects">Projects</a>
+            </div>
+        </div>
+    </div>
+            
+            <!-- Removed button-group section -->
+        </div>
+    </div>
+
+    <div id="projects" class="section">
+        
+        <div class="projects-grid">
+            <!-- Projects content here -->
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+    
+        <div class="contact-info">
+            <!-- Contact content here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.button');
+            const sections = document.querySelectorAll('.section');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('href');
+                    if (!targetId.startsWith('#')) return; // Skip if external link
+                    
+                    const targetSection = document.querySelector(targetId);
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+    }
+
+    .top-nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .name-title .dot {
+        background: linear-gradient(45deg, #6ab7e4, #87CEEB);
+        transform: scale(1.1);
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 3rem;
+        margin: 3rem auto;
+    }
+
+    .profile-section {
+        position: relative;
+        padding: 2rem;
+    }
+
+    .profile-image {
+        border: 8px solid white;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.02);
+    }
+
+    .profile-title {
+        background: linear-gradient(45deg, #333, #666);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .content-section h1 {
+        background: linear-gradient(45deg, #2c3e50, #3498db);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .content-section p {
+        color: #444;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .button-group {
+        margin-top: 3rem;
+    }
+
+    .circular-button {
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .resume {
+        background: linear-gradient(135deg, #9eeba8, #90EE90);
+        color: #1a472a;
+    }
+
+    .projects {
+        background: linear-gradient(135deg, #ffb347, #FFA500);
+        color: #8b4513;
+    }
+
+    .circular-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .name-info {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+    }
+
+    .name-info p {
+        color: #444;
+        font-size: 0.95rem;
+        margin: 0.7rem 0;
+    }
+</style>
+
+<!-- Add this link in the head section for the Poppins font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
